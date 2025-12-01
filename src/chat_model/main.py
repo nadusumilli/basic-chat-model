@@ -4,6 +4,9 @@ Main entry point for the chat application.
 
 import sys
 
+# Display constants
+HISTORY_PREVIEW_LENGTH = 100
+
 
 def main():
     """Run the interactive chat application."""
@@ -63,7 +66,7 @@ def main():
                     for entry in history:
                         role = entry["role"].capitalize()
                         content = entry["content"]
-                        print(f"  {role}: {content[:100]}...")
+                        print(f"  {role}: {content[:HISTORY_PREVIEW_LENGTH]}...")
                 continue
 
             # Send message and get response
